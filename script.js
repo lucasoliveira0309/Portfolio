@@ -53,7 +53,7 @@ function drawPts() {
     ctx.fillStyle = `rgba(168,85,247,${p.o})`;
     ctx.fill();
   });
-  
+
   pts.forEach(p => {
     const dx = p.x - mx, dy = p.y - my;
     const d = Math.sqrt(dx*dx + dy*dy);
@@ -86,6 +86,18 @@ window.addEventListener('scroll', () => {
 
 document.getElementById('footer-year').textContent = new Date().getFullYear();
 
+function calcularIdade(nascimento) {
+  const hoje = new Date();
+  let idade = hoje.getFullYear() - nascimento.getFullYear();
+  const m = hoje.getMonth() - nascimento.getMonth();
+  if (m < 0 || (m === 0 && hoje.getDate() < nascimento.getDate())) idade--;
+  return idade;
+}
+
+document.querySelectorAll('.idade').forEach(el => {
+  el.textContent = calcularIdade(new Date(2007, 8, 3)); 
+});
+
 function toggleMenu() {
   const btn = document.getElementById('hamburger');
   const drawer = document.getElementById('mobileDrawer');
@@ -100,8 +112,6 @@ function closeDrawer() {
 
 function closeMenu() { closeDrawer(); }
 
-
-// ── ROLAGEM SUAVE CUSTOMIZADA (EASE-IN-OUT) ──
 document.querySelectorAll('a[href^="#"]').forEach(anchor => {
   anchor.addEventListener('click', function (e) {
     e.preventDefault();
@@ -110,22 +120,20 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
     if (targetId === '#') return;
 
     const targetElement = document.querySelector(targetId);
-    
+
     if (targetElement) {
       // 1. Fecha o menu mobile se estiver aberto
       document.getElementById('hamburger').classList.remove('open');
       document.getElementById('mobileDrawer').classList.remove('open');
 
-      // 2. Calcula a distância matemática
-      const headerOffset = 80; // Altura do seu menu
+      const headerOffset = 80; 
       const elementPosition = targetElement.getBoundingClientRect().top;
       const startPosition = window.scrollY;
       const distance = elementPosition - headerOffset;
-      
-      const duration = 1000; // Tempo em milissegundos (1000 = 1 segundo). Aumente se quiser mais lento.
+
+      const duration = 1000; 
       let start = null;
 
-      // 3. Função Easing (Cubic Ease-In-Out) - Faz começar e terminar devagar
       function easeInOutCubic(t, b, c, d) {
         t /= d / 2;
         if (t < 1) return c / 2 * t * t * t + b;
@@ -133,26 +141,21 @@ document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         return c / 2 * (t * t * t + 2) + b;
       }
 
-      // 4. Loop de animação
       function animation(currentTime) {
         if (start === null) start = currentTime;
         const timeElapsed = currentTime - start;
-        
-        // Calcula a nova posição baseada no tempo
+
         const run = easeInOutCubic(timeElapsed, startPosition, distance, duration);
-        
+
         window.scrollTo(0, run);
-        
-        // Continua animando até o tempo acabar
+
         if (timeElapsed < duration) {
           requestAnimationFrame(animation);
         } else {
-          // Garante que pare no pixel exato ao final do tempo
           window.scrollTo(0, startPosition + distance);
         }
       }
 
-      // Inicia a animação
       requestAnimationFrame(animation);
     }
   });
