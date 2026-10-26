@@ -5,13 +5,24 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Lucas de Oliveira — Dev</title>
-  <link rel="shortcut icon" href="img/hacker.png" type="hacker imagem">
+  <link rel="shortcut icon" href="img/hacker.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link
     href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;400;500;600;700&family=Inter:wght@300;400;500&display=swap"
     rel="stylesheet">
   <link rel="stylesheet" href="style.css">
+  <style>
+    /* Ícones em imagem (JS, Java, Oracle) com o mesmo tamanho dos SVGs */
+    .skill-icon img {
+      width: 2rem;
+      height: 2rem;
+      display: block;
+      margin: 0 auto;
+      object-fit: contain;
+      border-radius: 4px;
+    }
+  </style>
 </head>
 
 <body>
@@ -62,8 +73,8 @@
         <div class="hero-eyebrow">Disponível para oportunidades</div>
         <h1 class="hero-name">Lucas de<br><span class="accent">Oliveira</span></h1>
         <p class="hero-title">Desenvolvedor Web &amp; Estudante de Python</p>
-        <p class="hero-desc">18 anos, apaixonado por tecnologia e programação. Criando experiências web modernas e
-          funcionais com foco em qualidade e design.</p>
+        <p class="hero-desc"><span class="idade">19</span> anos, apaixonado por tecnologia e programação. Criando
+          experiências web modernas e funcionais com foco em qualidade e design.</p>
         <div class="hero-cta">
           <a href="#projetos" class="btn-primary">
             <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
@@ -109,9 +120,10 @@
       <div class="sobre-text reveal">
         <span class="section-label">Sobre mim</span>
         <h2 class="section-title">Quem sou<br>eu?</h2>
-        <p>Olá! Sou <strong>Lucas de Oliveira</strong>, tenho 18 anos e sou desenvolvedor web apaixonado por tecnologia
-          desde cedo. Me formei no curso técnico de informática pelo <strong>Senac</strong> e também no curso de
-          <strong>Análise e Desenvolvimento de Sistemas</strong> integrado ao ensino médio.</p>
+        <p>Olá! Sou <strong>Lucas de Oliveira</strong>, tenho <span class="idade">19</span> anos e sou desenvolvedor
+          web apaixonado por tecnologia desde cedo. Me formei no curso técnico de informática pelo
+          <strong>Senac</strong> e também no curso de <strong>Análise e Desenvolvimento de Sistemas</strong> integrado
+          ao ensino médio.</p>
         <p>Tenho cursos pela <strong>Alura</strong> e estou atualmente aprofundando meus conhecimentos em
           <strong>Python</strong>, buscando oportunidades para crescer na área de programação e criar soluções que façam
           diferença.</p>
@@ -123,7 +135,7 @@
         <div class="timeline" style="margin-top:18px">
           <div class="tl-item">
             <div class="tl-dot"></div>
-            <div class="tl-date">2022 — 2024</div>
+            <div class="tl-date">2024 — 2026</div>
             <div class="tl-course">Técnico em Informática</div>
             <div class="tl-school">Senac · 2 anos</div>
           </div>
@@ -135,9 +147,9 @@
           </div>
           <div class="tl-item">
             <div class="tl-dot"></div>
-            <div class="tl-date">Em andamento</div>
+            <div class="tl-date">Concluído</div>
             <div class="tl-course">Desenvolvimento Web Full Stack</div>
-            <div class="tl-school">Alura · HTML, CSS, JS, Python, Flask</div>
+            <div class="tl-school">Alura · HTML, CSS, JS, Python, Flask, Bancos Relacionais</div>
           </div>
           <div class="tl-item">
             <div class="tl-dot" style="background:var(--glow);animation:pulse 1.8s infinite"></div>
@@ -187,14 +199,7 @@
         <div class="skill-name">CSS</div>
       </div>
       <div class="skill-pill reveal reveal-delay-2">
-        <span class="skill-icon">
-          <svg viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
-            <rect width="32" height="32" rx="4" fill="#F7DF1E" />
-            <path
-              d="M10.9 24.3c.5.8 1.1 1.4 2.3 1.4 1 0 1.6-.5 1.6-1.2 0-.8-.6-1.1-1.7-1.6l-.6-.2c-1.7-.7-2.8-1.6-2.8-3.5 0-1.7 1.3-3 3.4-3 1.5 0 2.5.5 3.3 1.8l-1.8 1.2c-.4-.7-.8-1-1.5-1-.7 0-1.1.4-1.1 1 0 .7.4 1 1.5 1.4l.6.3c2 .9 3.1 1.7 3.1 3.6 0 2.1-1.6 3.2-3.8 3.2-2.1 0-3.5-1-4.2-2.4l1.7-1zm8.6-.3c.4.6.7 1.2 1.5 1.2.8 0 1.3-.3 1.3-1.5v-8.2h2.2v8.2c0 2.4-1.4 3.5-3.5 3.5-1.9 0-2.9-1-3.5-2.1l2-.1z"
-              fill="#000" />
-          </svg>
-        </span>
+        <span class="skill-icon"><img src="img/js.png" alt="JavaScript"></span>
         <div class="skill-name">JavaScript</div>
       </div>
       <div class="skill-pill reveal reveal-delay-2">
@@ -260,8 +265,14 @@
         <div class="skill-name">MySQL</div>
       </div>
       <div class="skill-pill reveal reveal-delay-4">
-        <span class="skill-icon">📱</span>
-        <div class="skill-name">Design Responsivo</div>
+        <span class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/java/java-original.svg"
+            alt="Java"></span>
+        <div class="skill-name">Java</div>
+      </div>
+      <div class="skill-pill reveal reveal-delay-4">
+        <span class="skill-icon"><img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/oracle/oracle-original.svg"
+            alt="Oracle"></span>
+        <div class="skill-name">Oracle DB</div>
       </div>
     </div>
   </section>
@@ -389,6 +400,35 @@
         </div>
       </div>
 
+      <div class="project-card reveal reveal-delay-1">
+        <div class="project-thumb" style="background:linear-gradient(135deg,#0A1C40,#061024)">
+          <div class="bg-blur" style="background:radial-gradient(circle,rgba(86,140,255,.12) 0%,transparent 70%)"></div>
+          <img src="img/leticiaarquiteta.png" alt="">
+        </div>
+        <div class="project-body">
+          <span class="project-tag">Arquitetura · Projeto real</span>
+          <div class="project-name">Letícia Mota Arquitetura</div>
+          <p class="project-desc">One page para uma arquiteta de interiores, com apresentação dos serviços e imagens
+            dos projetos realizados. Layout elegante e responsivo, feito para um cliente real.</p>
+          <div class="project-stack">
+            <span class="stack-tag">HTML</span>
+            <span class="stack-tag">CSS</span>
+            <span class="stack-tag">JavaScript</span>
+          </div>
+        </div>
+        <div class="project-footer">
+          <a href="https://lucasoliveira0309.github.io/Leticia_Arquiteta/" target="_blank" rel="noopener"
+            class="btn-project">
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+              <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+              <polyline points="15 3 21 3 21 9" />
+              <line x1="10" y1="14" x2="21" y2="3" />
+            </svg>
+            Ver Site
+          </a>
+        </div>
+      </div>
+
     </div>
   </section>
 
@@ -401,12 +441,12 @@
       <p class="reveal">Estou em busca de oportunidades na área de programação e aberto a novos projetos. Se você tem
         uma ideia ou uma vaga, me manda uma mensagem!</p>
       <div class="contact-links reveal">
-        <a href="mailto:lucas@gmail.com" class="contact-chip">
+        <a href="mailto:lucasoliveira030927@email.com" class="contact-chip">
           <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
             <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
             <polyline points="22,6 12,13 2,6" />
           </svg>
-          lucasoliveira030927@gmail.com
+          lucasoliveira030927@email.com
         </a>
         <a href="https://github.com/lucasoliveira0309/" target="_blank" class="contact-chip">
           <svg viewBox="0 0 24 24" fill="currentColor">
@@ -430,7 +470,7 @@
           WhatsApp
         </a>
       </div>
-      <a href="mailto:lucasoliveira030927@gmail.com" class="btn-primary reveal" style="display:inline-flex">
+      <a href="mailto:lucasoliveira030927@email.com" class="btn-primary reveal" style="display:inline-flex">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
           <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
           <polyline points="22,6 12,13 2,6" />
